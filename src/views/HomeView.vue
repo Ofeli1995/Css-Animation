@@ -61,17 +61,17 @@
             <i class="media fab fa-codepen"></i>
           </div>
         </div>
-        <!-- <div class="col-manu">
-          <img class="burger-manu" src="@/assets/menu.svg" alt="menu" />
-        </div> -->
       </div>
     </div>
+    <HomePage />
   </div>
 </template>
 
 <script>
+import HomePage from "@/components/HomePage.vue";
 export default {
   name: "HomeView",
+  components: { HomePage },
   data() {
     return {
       menuActive: false,
@@ -87,13 +87,15 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.main-menu {
+  display: none;
+}
 .container {
   background-image: url("@/assets/background.jpg");
   background-position: 0 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
-  height: 100vh;
   padding: 0px;
   margin: 0;
 }
@@ -112,10 +114,11 @@ export default {
 .col {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .col {
   gap: 75px;
+  padding: 0 20px;
 }
 .nav-title {
   font-size: 1.562rem;
@@ -333,7 +336,7 @@ body {
   z-index: 4000;
   transition: transform $menuTime cubic-bezier(0.85, 0.2, 0.2, 0.85);
   background: rgba(0, 0, 0, 0.8);
-  width: 100vw;
+  width: 100%;
   transform: translateX(100%);
   top: 0;
   bottom: 0;
@@ -430,6 +433,9 @@ body {
   }
   .burger .bars {
     width: 50px;
+  }
+  .main-menu {
+    display: block;
   }
 }
 @media screen and (max-width: 520px) {
