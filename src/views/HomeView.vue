@@ -58,7 +58,6 @@
           <div class="media-container">
             <i class="media fab fa-instagram"></i>
             <i class="media fab fa-github"></i>
-            <i class="media fab fa-codepen"></i>
           </div>
         </div>
       </div>
@@ -261,6 +260,7 @@ body {
   position: fixed;
   top: 33px;
   left: 20px;
+  position: absolute;
   width: 50px;
   height: 50px;
   display: none;
