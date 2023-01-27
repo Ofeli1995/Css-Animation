@@ -2,18 +2,25 @@
   <div class="container1">
     <div class="columns">
       <div class="left-col">
-        2
-        <!-- <div class="images-group">
+        <div class="images-group">
+          <img
+            src="@/assets/animation-img/Vector.svg"
+            alt="img"
+            class="left-img"
+          />
           <img
             src="@/assets/animation-img/Vector1.svg"
-            style="padding-bottom: 20px"
+            alt="img"
+            class="right-img"
+          />
+        </div>
+        <div>
+          <img
+            src="@/assets/animation-img/Vector2.svg"
+            class="bottom-img"
             alt="img"
           />
-          <img src="@/assets/animation-img/Vector2.svg" alt="img" />
         </div>
-        <div class="bottom-img">
-          <img src="@/assets/animation-img/Vector3.svg" alt="img" />
-        </div> -->
       </div>
       <div class="col central-col">
         <div class="col-gradient">
@@ -26,20 +33,27 @@
               <span class="central-text">MARKETING & DATA</span>
               <span class="central-text">ANALYSER</span>
               <span class="created-by">CREATED BY</span>
-              <span class="snake central-text"
-                >------------------------------------------</span
-              >
-              <div class="grow-now-btn">
-                <span class="grow-now-btn-title"> GROW NOW </span>
+              <div style="display: flex; align-items: center">
+                <span class="snake central-text">--------------</span>
+                <div class="grow-now-btn">
+                  <span class="grow-now-btn-title"> GROW NOW -> </span>
+                </div>
+                <span class="snake central-text">--------------</span>
               </div>
-              <span class="snake central-text"
-                >------------------------------------------</span
-              >
             </div>
           </div>
         </div>
       </div>
-      <div class="right-col">3</div>
+      <div class="right-col">
+        <div class="orange-circle">
+          <span class="orange-circle-text">
+            <span class="orange-circle-text-first-line"> SEE<br /> </span>
+
+            <span class="orange-circle-text-second-line"> HOW IT <br /> </span>
+            <span class="orange-circle-text-last-line"> WORKS </span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,13 +67,34 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.left-col {
+  position: relative;
+}
+.left-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: mover2 1.8s alternate;
+}
+.right-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: mover1 1.8s alternate;
+}
+.bottom-img {
+  position: relative;
+  top: 120px;
+  animation: mover3 1.8s alternate;
+}
 .columns {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 100px 20px 20px 20px;
 }
 .central-col {
   padding-top: 60px;
+  padding-right: 140px;
 }
 .col-gradient {
   width: 300px;
@@ -67,6 +102,46 @@ export default {
   background: linear-gradient(186.35deg, #d5d8d1 73.58%, #9aa5b0 100.76%);
   border-radius: 10px;
   animation: mover 0.8s alternate;
+}
+.orange-circle {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(30.12deg, #e8aea0 14.52%, #f06950 53.5%);
+  border-radius: 50%;
+  position: relative;
+  animation: mover 0.8s alternate;
+}
+.orange-circle-text {
+  position: absolute;
+  top: 95px;
+  left: 90px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  display: block;
+}
+.orange-circle-text-first-line,
+.orange-circle-text-last-line,
+.orange-circle-text-second-line {
+  display: block;
+  overflow: hidden;
+}
+.orange-circle:hover {
+  .orange-circle-text-first-line,
+  .orange-circle-text-last-line,
+  .orange-circle-text-second-line {
+    animation-name: btn-title-circle;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    animation-direction: alternate, reverse, normal;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    color: black;
+    display: block;
+
+    animation-fill-mode: forwards;
+  }
 }
 @keyframes mover {
   0% {
@@ -76,6 +151,43 @@ export default {
   100% {
     transform: translateY(0);
     opacity: 100%;
+  }
+}
+@keyframes mover1 {
+  0% {
+    transform: translateY(-50px) translateX(+50px);
+    opacity: 0;
+    height: 50px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+    height: 189px;
+  }
+}
+@keyframes mover2 {
+  0% {
+    transform: translateY(-50px) translateX(-50px);
+    opacity: 0;
+    width: 70px;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+    width: 245px;
+  }
+}
+@keyframes mover3 {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+    width: 50px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+    width: 100%;
   }
 }
 .dash-gorizont {
@@ -106,12 +218,17 @@ export default {
   font-weight: 400;
   color: #9aa5b0;
   padding-top: 2.5rem;
+  padding-bottom: 100px;
 }
 .for-position {
   position: relative;
 }
 .grow-now-btn-title {
   display: block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
 }
 .grow-now-btn {
   width: 160px;
@@ -152,12 +269,12 @@ export default {
   66% {
     transform: translateX(0%) translateY(100%);
     opacity: 0;
-    color: tomato;
+    color: black;
   }
   100% {
     transform: translateX(0%) translateY(0%);
     opacity: 1;
-    color: tomato;
+    color: black;
   }
 }
 </style>

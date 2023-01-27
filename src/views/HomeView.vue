@@ -113,7 +113,7 @@ export default {
 .col {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .col {
   gap: 75px;
