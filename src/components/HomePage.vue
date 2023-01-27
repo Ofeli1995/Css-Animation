@@ -2,24 +2,42 @@
   <div class="container1">
     <div class="columns">
       <div class="left-col">
-        <div class="images-group">
-          <img
-            src="@/assets/animation-img/Vector.svg"
-            alt="img"
-            class="left-img"
-          />
-          <img
-            src="@/assets/animation-img/Vector1.svg"
-            alt="img"
-            class="right-img"
-          />
-        </div>
-        <div>
-          <img
-            src="@/assets/animation-img/Vector2.svg"
-            class="bottom-img"
-            alt="img"
-          />
+        <div class="animation-images">
+          <div class="images-group">
+            <img
+              src="@/assets/animation-img/Vector.svg"
+              alt="img"
+              class="left-img"
+            />
+            <img
+              src="@/assets/animation-img/Vector1.svg"
+              alt="img"
+              class="right-img"
+            />
+          </div>
+          <div>
+            <img
+              src="@/assets/animation-img/Vector2.svg"
+              class="bottom-img"
+              alt="img"
+            />
+          </div>
+          <div class="users-animation">
+            <img
+              src="@/assets/users/1.jpg"
+              alt="user"
+              width="50px"
+              height="50px"
+              style="border-radius: 50%"
+            />
+            <img
+              src="@/assets/users/2.jpg"
+              alt="user"
+              width="50px"
+              height="50px"
+              style="border-radius: 50%"
+            />
+          </div>
         </div>
       </div>
       <div class="col central-col">
@@ -67,8 +85,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.left-col {
+.animation-images {
   position: relative;
+}
+.users-animation {
+  position: absolute;
+  top: 300px;
 }
 .left-img {
   position: absolute;
@@ -113,12 +135,10 @@ export default {
 }
 .orange-circle-text {
   position: absolute;
-  top: 95px;
-  left: 90px;
-  font-family: "Montserrat";
+  top: 85px;
+  left: 80px;
   font-style: normal;
   font-weight: 900;
-  font-size: 1rem;
   display: block;
 }
 .orange-circle-text-first-line,
@@ -126,6 +146,7 @@ export default {
 .orange-circle-text-second-line {
   display: block;
   overflow: hidden;
+  font-size: 1.5rem;
 }
 .orange-circle:hover {
   .orange-circle-text-first-line,
@@ -142,6 +163,11 @@ export default {
 
     animation-fill-mode: forwards;
   }
+}
+.users-animation {
+  width: 200px;
+  height: 200px;
+  // background-color: red;
 }
 @keyframes mover {
   0% {
@@ -225,7 +251,6 @@ export default {
 }
 .grow-now-btn-title {
   display: block;
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
   font-size: 1rem;
