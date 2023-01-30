@@ -23,20 +23,22 @@
             />
           </div>
           <div class="users-animation">
-            <img
-              src="@/assets/users/1.jpg"
-              alt="user"
-              width="50px"
-              height="50px"
-              style="border-radius: 50%"
-            />
-            <img
-              src="@/assets/users/2.jpg"
-              alt="user"
-              width="50px"
-              height="50px"
-              style="border-radius: 50%"
-            />
+            <div>
+              <img
+                src="@/assets/users/2.jpg"
+                alt="user"
+                width="100px"
+                height="100px"
+                class="user1"
+              />
+              <img
+                src="@/assets/users/1.jpg"
+                alt="user"
+                width="100px"
+                height="100px"
+                class="user2"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -45,31 +47,46 @@
           <div class="for-position">
             <div class="dash-gorizont">
               <span class="snake central-text"
-                >------------------------------------------</span
+                >--------------------------------------</span
               >
               <span class="central-text">YOUR BEST</span>
               <span class="central-text">MARKETING & DATA</span>
               <span class="central-text">ANALYSER</span>
               <span class="created-by">CREATED BY</span>
               <div style="display: flex; align-items: center">
-                <span class="snake central-text">--------------</span>
+                <span class="snake central-text">------------</span>
                 <div class="grow-now-btn">
-                  <span class="grow-now-btn-title"> GROW NOW -> </span>
+                  <span class="grow-now-btn-title"> GROW NOW </span>
+                  <img
+                    class="arrow-animation"
+                    src="@/assets/arrows/up-arrow.svg"
+                    alt="arrow"
+                    width="18px"
+                    height="18px"
+                  />
                 </div>
-                <span class="snake central-text">--------------</span>
+                <span class="snake central-text">------------</span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="right-col">
-        <div class="orange-circle">
-          <span class="orange-circle-text">
-            <span class="orange-circle-text-first-line"> SEE<br /> </span>
+        <div
+          class="container-orange"
+          @mousemove="onMouseMove"
+          @mouseleft="onMouseLeave"
+        >
+          <div class="orange-circle">
+            <span class="orange-circle-text">
+              <span class="orange-circle-text-first-line"> SEE<br /> </span>
 
-            <span class="orange-circle-text-second-line"> HOW IT <br /> </span>
-            <span class="orange-circle-text-last-line"> WORKS </span>
-          </span>
+              <span class="orange-circle-text-second-line">
+                HOW IT <br />
+              </span>
+              <span class="orange-circle-text-last-line"> WORKS </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -82,15 +99,44 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    onMouseMove(e) {
+      let orange = document.querySelector(".orange-circle");
+      let clientY = -(window.innerHeight / 2 - e.pageY) / 5;
+      let clientX = -(window.innerWidth / 2 - e.pageX) / 5;
+      orange.style.left = clientX + "px";
+      orange.style.top = clientY + "px";
+    },
+    onMouseLeave() {
+      orange.style.left = 0 + "px";
+      orange.style.top = 0 + "px";
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
+.container-orange {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
 .animation-images {
   position: relative;
 }
 .users-animation {
   position: absolute;
   top: 300px;
+}
+.user1 {
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  left: 80px;
+}
+.user2 {
+  border-radius: 50%;
+  border: 3px solid white;
+  position: relative;
 }
 .left-img {
   position: absolute;
@@ -112,16 +158,21 @@ export default {
 .columns {
   display: flex;
   justify-content: space-around;
-  padding: 100px 20px 20px 20px;
+  padding: 140px 20px 20px 20px;
 }
 .central-col {
   padding-top: 60px;
-  padding-right: 140px;
+  padding-right: 40px;
 }
 .col-gradient {
   width: 300px;
   height: 950px;
-  background: linear-gradient(186.35deg, #d5d8d1 73.58%, #9aa5b0 100.76%);
+  background: linear-gradient(
+    185.53deg,
+    #d6d9d2 42.08%,
+    #b2c0c0 64.68%,
+    #9ba6b1 82.3%
+  );
   border-radius: 10px;
   animation: mover 0.8s alternate;
 }
@@ -130,7 +181,7 @@ export default {
   height: 250px;
   background: linear-gradient(30.12deg, #e8aea0 14.52%, #f06950 53.5%);
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   animation: mover 0.8s alternate;
 }
 .orange-circle-text {
@@ -165,8 +216,8 @@ export default {
   }
 }
 .users-animation {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 600px;
   // background-color: red;
 }
 @keyframes mover {
@@ -234,6 +285,8 @@ export default {
   letter-spacing: 5px;
   font-family: cursive !important;
   padding: 50px 0;
+  display: block;
+  width: max-content;
 }
 .grow-now {
   padding-top: 60px;
@@ -279,6 +332,17 @@ export default {
     color: black;
     animation-fill-mode: forwards;
   }
+  .arrow-animation {
+    animation: arrow-rotate 0.8s alternate;
+  }
+}
+@keyframes arrow-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
 @keyframes btn-title-circle {
   0% {
@@ -300,6 +364,127 @@ export default {
     transform: translateX(0%) translateY(0%);
     opacity: 1;
     color: black;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .container-orange,
+  .animation-images {
+    display: none;
+  }
+  .snake {
+    padding: 25px 0;
+  }
+  .created-by {
+    padding-bottom: 60px;
+  }
+  .central-col {
+    padding-right: 0;
+  }
+  .col-gradient {
+    height: 800px;
+  }
+  .columns {
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .central-text {
+    font-size: 5rem;
+  }
+  .col-gradient {
+    height: 750px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .central-text {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .central-text {
+    font-size: 3.5rem;
+  }
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    position: absolute;
+    left: -50%;
+    top: 100px;
+  }
+  .col-gradient {
+    height: 650px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    position: absolute;
+    left: -34%;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .central-text {
+    font-size: 2.5rem;
+  }
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    position: absolute;
+    left: -24%;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    position: absolute;
+    left: -16%;
+    top: 100px;
+  }
+  .col-gradient {
+    height: 570px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .central-text {
+    font-size: 1.5rem;
+  }
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    position: absolute;
+    left: 0%;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .dash-gorizont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+  }
+  .col-gradient {
+    width: 250px;
+  }
+  .central-text[data-v-df02a584] {
+    font-size: 1.25rem;
   }
 }
 </style>
