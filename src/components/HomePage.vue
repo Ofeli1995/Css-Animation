@@ -46,6 +46,22 @@
         <div class="col-gradient">
           <div class="for-position">
             <div class="dash-gorizont">
+              <div class="container-orange-small">
+                <div class="orange-circle-small">
+                  <span class="orange-circle-text-small">
+                    <span class="orange-circle-text-first-line-small">
+                      SEE<br />
+                    </span>
+
+                    <span class="orange-circle-text-second-line-small">
+                      HOW IT <br />
+                    </span>
+                    <span class="orange-circle-text-last-line-small">
+                      WORKS
+                    </span>
+                  </span>
+                </div>
+              </div>
               <span class="snake central-text"
                 >--------------------------------------</span
               >
@@ -115,10 +131,27 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+body {
+  overflow-x: hidden !important;
+}
 .container-orange {
   position: relative;
   width: 350px;
   height: 350px;
+}
+.container-orange-small {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: none;
+  padding-left: 300px;
+}
+.orange-circle-small {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(30.12deg, #e8aea0 14.52%, #f06950 53.5%);
+  border-radius: 50%;
+  position: absolute;
 }
 .animation-images {
   position: relative;
@@ -191,6 +224,21 @@ export default {
   font-style: normal;
   font-weight: 900;
   display: block;
+}
+.orange-circle-text-small {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-style: normal;
+  font-weight: 900;
+  display: block;
+}
+.orange-circle-text-first-line-small,
+.orange-circle-text-last-line-small,
+.orange-circle-text-second-line-small {
+  display: block;
+  overflow: hidden;
+  font-size: 1rem;
 }
 .orange-circle-text-first-line,
 .orange-circle-text-last-line,
@@ -371,6 +419,9 @@ export default {
   .animation-images {
     display: none;
   }
+  .container-orange-small {
+    display: block;
+  }
   .snake {
     padding: 25px 0;
   }
@@ -378,13 +429,18 @@ export default {
     padding-bottom: 60px;
   }
   .central-col {
-    padding-right: 0;
+    padding-left: 25px;
+    position: relative;
   }
+
   .col-gradient {
     height: 800px;
   }
   .columns {
     padding-top: 0px;
+  }
+  .dash-gorizont {
+    top: -50px;
   }
 }
 @media screen and (max-width: 980px) {
@@ -392,7 +448,7 @@ export default {
     font-size: 5rem;
   }
   .col-gradient {
-    height: 750px;
+    height: 800px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -400,7 +456,7 @@ export default {
     font-size: 4rem;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 810px) {
   .central-text {
     font-size: 3.5rem;
   }
@@ -411,21 +467,27 @@ export default {
     width: 600px;
     position: absolute;
     left: -50%;
-    top: 100px;
   }
   .col-gradient {
-    height: 650px;
+    height: 800px;
   }
 }
 @media screen and (max-width: 620px) {
   .dash-gorizont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    position: absolute;
-    left: -34%;
-    top: 100px;
+    width: 480px;
+    left: -31%;
+  }
+  .central-text {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .dash-gorizont {
+    width: 480px;
+    left: -31%;
+  }
+  .central-text {
+    font-size: 3rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -433,30 +495,44 @@ export default {
     font-size: 2.5rem;
   }
   .dash-gorizont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 450px;
-    position: absolute;
+    width: 440px;
+
     left: -24%;
-    top: 100px;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
+  .dash-gorizont {
+    width: 410px;
+    left: -19%;
+  }
+}
+@media screen and (max-width: 460px) {
   .dash-gorizont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 250px;
     position: absolute;
-    left: -16%;
-    top: 100px;
+    left: 5%;
   }
   .col-gradient {
-    height: 570px;
+    height: 800px;
+  }
+
+  .central-text {
+    font-size: 1.75rem;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
+  .dash-gorizont {
+    left: 18%;
+    width: 177px;
+  }
+  .central-text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 430px) {
   .central-text {
     font-size: 1.5rem;
   }
@@ -464,10 +540,9 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 270px;
     position: absolute;
-    left: 0%;
-    top: 100px;
+    left: 5%;
   }
 }
 @media screen and (max-width: 360px) {
@@ -478,7 +553,6 @@ export default {
     width: 200px;
     position: absolute;
     left: 10%;
-    top: 100px;
   }
   .col-gradient {
     width: 250px;

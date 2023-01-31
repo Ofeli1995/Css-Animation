@@ -3,14 +3,30 @@
     <div class="content">
       <div class="column">
         <div class="col">
-          <div class="nav-title-container">
-            <span class="nav-title"> Product </span>
+          <div
+            class="nav-title-container"
+            @mouseout="onMouseOut"
+            @mouseover="onMouseOver"
+          >
+            <span class="nav-title">Product </span>
           </div>
           <div class="nav-title-container">
-            <span class="nav-title"> Resources </span>
+            <span
+              class="nav-title"
+              @mouseout="onMouseOut"
+              @mouseover="onMouseOver"
+            >
+              Resources
+            </span>
           </div>
           <div class="nav-title-container">
-            <span class="nav-title"> Support </span>
+            <span
+              class="nav-title"
+              @mouseout="onMouseOut"
+              @mouseover="onMouseOver"
+            >
+              Support
+            </span>
           </div>
         </div>
         <div class="col-icon">
@@ -23,10 +39,22 @@
         </div>
         <div class="col">
           <div class="nav-title-container">
-            <span class="nav-title"> Company </span>
+            <span
+              class="nav-title"
+              @mouseout="onMouseOut"
+              @mouseover="onMouseOver"
+            >
+              Company
+            </span>
           </div>
           <div class="nav-title-container">
-            <span class="nav-title"> Pricing </span>
+            <span
+              class="nav-title"
+              @mouseout="onMouseOut"
+              @mouseover="onMouseOver"
+            >
+              Pricing
+            </span>
           </div>
           <div class="nav-title">
             <button class="connect-btn">
@@ -83,6 +111,18 @@ export default {
         { label: "Connect", url: "#" },
       ],
     };
+  },
+  methods: {
+    onMouseOver(e) {
+      console.log(e.target);
+
+      e.target.classList.remove("after-hover-animation");
+      e.target.classList.add("hover-animation");
+    },
+    onMouseOut(e) {
+      e.target.classList.remove("hover-animation");
+      e.target.classList.add("after-hover-animation");
+    },
   },
 };
 </script>
@@ -152,18 +192,27 @@ export default {
     animation-fill-mode: forwards;
   }
 }
-.nav-title-container:hover {
-  .nav-title {
-    animation-name: title-circle;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    animation-direction: alternate, reverse, normal;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    color: tomato;
-    animation-fill-mode: forwards;
-  }
+.hover-animation {
+  animation-name: title-circle;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  color: tomato;
+  animation-fill-mode: forwards;
 }
+.after-hover-animation {
+  animation-name: title-circle-after;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  color: black;
+  animation-fill-mode: forwards;
+}
+
 .connect-btn {
   background-color: black;
   color: #fff;
@@ -217,6 +266,28 @@ export default {
     transform: translateX(0%) translateY(0%);
     opacity: 1;
     color: tomato;
+  }
+}
+@keyframes title-circle-after {
+  0% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: tomato;
+  }
+  33% {
+    transform: translateX(0%) translateY(+100%);
+    opacity: 0;
+    color: tomatoblack;
+  }
+  66% {
+    transform: translateX(0%) translateY(-100%);
+    opacity: 0;
+    color: black;
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: black;
   }
 }
 @keyframes btn-title-circle {
