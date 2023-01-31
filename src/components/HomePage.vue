@@ -71,14 +71,30 @@
               <span class="created-by">CREATED BY</span>
               <div style="display: flex; align-items: center">
                 <span class="snake central-text">------------</span>
-                <div class="grow-now-btn">
-                  <span class="grow-now-btn-title"> GROW NOW </span>
+                <div
+                  class="grow-now-btn"
+                  @mouseout="onMouseOut"
+                  @mouseover="onMouseOver"
+                >
+                  <span
+                    class="grow-now-btn-title"
+                    :class="{
+                      growAnimation: isHoverGrowNow,
+                      growAnimationout: isHoverGrowNowAfter,
+                    }"
+                  >
+                    GROW NOW
+                  </span>
+
                   <img
-                    class="arrow-animation"
+                    class="grow-arrow"
+                    :class="{
+                      arrowAnimation: isHoverGrowNow,
+                      arrowAnimationOut: isHoverGrowNowAfter,
+                    }"
                     src="@/assets/arrows/up-arrow.svg"
                     alt="arrow"
-                    width="18px"
-                    height="18px"
+                    width="20px"
                   />
                 </div>
                 <span class="snake central-text">------------</span>
@@ -113,7 +129,10 @@
 export default {
   name: "HomePage",
   data() {
-    return {};
+    return {
+      isHoverGrowNow: false,
+      isHoverGrowNowAfter: false,
+    };
   },
   methods: {
     onMouseMove(e) {
@@ -126,6 +145,14 @@ export default {
     onMouseLeave() {
       orange.style.left = 0 + "px";
       orange.style.top = 0 + "px";
+    },
+    onMouseOver(e) {
+      this.isHoverGrowNowAfter = false;
+      this.isHoverGrowNow = true;
+    },
+    onMouseOut(e) {
+      this.isHoverGrowNow = false;
+      this.isHoverGrowNowAfter = true;
     },
   },
 };
@@ -369,21 +396,50 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
-.grow-now-btn:hover {
-  .grow-now-btn-title {
-    animation-name: btn-title-circle;
-    animation-duration: 0.6s;
-    animation-iteration-count: 1;
-    animation-direction: alternate, reverse, normal;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    color: black;
-    animation-fill-mode: forwards;
-  }
-  .arrow-animation {
-    animation: arrow-rotate 0.8s alternate;
-  }
+
+.growAnimation {
+  animation-name: btn-title-circle;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  color: black;
+  animation-fill-mode: forwards;
 }
+.growAnimationout {
+  animation-name: btn-title-circle-back;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  color: black;
+  animation-fill-mode: forwards;
+}
+
+.grow-arrow {
+  width: 20px !important;
+}
+.arrowAnimation {
+  animation-name: arrow-rotate;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+.arrowAnimationOut {
+  animation-name: arrow-rotate-back;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes arrow-rotate {
   0% {
     transform: rotate(0);
@@ -392,6 +448,15 @@ body {
     transform: rotate(180deg);
   }
 }
+@keyframes arrow-rotate-back {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 @keyframes btn-title-circle {
   0% {
     transform: translateX(0%) translateY(0%);
@@ -405,6 +470,28 @@ body {
   }
   66% {
     transform: translateX(0%) translateY(100%);
+    opacity: 0;
+    color: black;
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: black;
+  }
+}
+@keyframes btn-title-circle-back {
+  0% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: black;
+  }
+  33% {
+    transform: translateX(0%) translateY(+100%);
+    opacity: 0;
+    color: black;
+  }
+  66% {
+    transform: translateX(0%) translateY(-100%);
     opacity: 0;
     color: black;
   }

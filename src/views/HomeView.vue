@@ -114,8 +114,6 @@ export default {
   },
   methods: {
     onMouseOver(e) {
-      console.log(e.target);
-
       e.target.classList.remove("after-hover-animation");
       e.target.classList.add("hover-animation");
     },
