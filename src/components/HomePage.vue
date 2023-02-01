@@ -24,20 +24,36 @@
           </div>
           <div class="users-animation">
             <div>
+              <img src="@/assets/users/2.jpg" alt="user" class="user1" />
+              <img src="@/assets/users/1.jpg" alt="user" class="user2" />
+            </div>
+
+            <!-- @mouseout="onMouseOut"
+            @mouseover="onMouseOver" -->
+            <!-- :class="{
+              'case-animation': showtextAnimation,
+              'case-animation-out': showtextAnimationAfter,
+            }" -->
+
+            <div class="case-studies">
+              <span>CASE </span>
+              <span>STUDIES</span>
+              <!-- :class="{ 'case-arrow-animation': showtextAnimation }" -->
               <img
-                src="@/assets/users/2.jpg"
-                alt="user"
-                width="100px"
-                height="100px"
-                class="user1"
+                class="grow-arrow"
+                src="@/assets/arrows/arrow-right.svg"
+                alt="arrow"
+                style="padding-top: 8px"
               />
-              <img
-                src="@/assets/users/1.jpg"
-                alt="user"
-                width="100px"
-                height="100px"
-                class="user2"
-              />
+            </div>
+          </div>
+          <div class="left-col-bottom">
+            <div class="left-col-bottom-icon">
+              <img src="@/assets/E.svg" alt="E" />
+            </div>
+            <div class="left-col-bottom-body">
+              <span class="left-col-bottom-title">LATEST NEWS & INSIGHTS</span>
+              <span>AI Adoption lessons from real life</span>
             </div>
           </div>
         </div>
@@ -94,7 +110,6 @@
                     }"
                     src="@/assets/arrows/up-arrow.svg"
                     alt="arrow"
-                    width="20px"
                   />
                 </div>
                 <span class="snake central-text">------------</span>
@@ -132,6 +147,8 @@ export default {
     return {
       isHoverGrowNow: false,
       isHoverGrowNowAfter: false,
+      showtextAnimation: false,
+      showtextAnimationAfter: false,
     };
   },
   methods: {
@@ -147,19 +164,67 @@ export default {
       orange.style.top = 0 + "px";
     },
     onMouseOver(e) {
+      // if (e.target.className === "case-studies") {
+      //   this.showtextAnimationAfter = false;
+      //   this.showtextAnimation = true;
+      // } else
+      // if (e.target.className === "grow-now-btn") {
+      this.showtextAnimation = true;
       this.isHoverGrowNowAfter = false;
       this.isHoverGrowNow = true;
+      // }
     },
     onMouseOut(e) {
+      // if (e.target.className === "case-studies") {
+      //   this.showtextAnimation = false;
+      //   this.showtextAnimationAfter = true;
+      // } else
+      // if (e.target.className === "grow-now-btn") {
       this.isHoverGrowNow = false;
       this.isHoverGrowNowAfter = true;
+      // }
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-body {
-  overflow-x: hidden !important;
+.left-col-bottom-title {
+  color: #a6a6a6;
+}
+.left-col-bottom-body {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.left-col-bottom {
+  position: absolute;
+  top: 800px;
+  display: flex;
+  align-items: center;
+  animation: mover 0.8s alternate;
+}
+.left-col-bottom-icon {
+  padding-right: 25px;
+}
+.case-studies {
+  display: flex;
+  flex-direction: column;
+}
+.case-studies span {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.case-studies:hover span {
+  animation-name: btn-title-circle;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  color: black;
+  display: block;
 }
 .container-orange {
   position: relative;
@@ -187,13 +252,17 @@ body {
   position: absolute;
   top: 300px;
   width: 300px;
-  height: 600px;
+  height: 650px;
+  display: flex;
+  justify-content: space-between;
 }
 .user1 {
   border-radius: 50%;
   border: 3px solid white;
   position: absolute;
-  left: 80px;
+  left: 65px;
+  width: 80px;
+  height: 80px;
   animation: mover-user1 0.8s alternate;
 }
 .user2 {
@@ -201,6 +270,8 @@ body {
   border-radius: 50%;
   border: 3px solid white;
   position: relative;
+  width: 80px;
+  height: 80px;
 }
 .left-img {
   position: absolute;
@@ -297,12 +368,34 @@ body {
 
 @keyframes mover {
   0% {
-    transform: translateY(10px);
+    transform: translateY(100px);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
     opacity: 100%;
+  }
+}
+@keyframes arrow-right {
+  0% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: black;
+  }
+  33% {
+    transform: translateX(100%) translateY(0%);
+    opacity: 0;
+    color: black;
+  }
+  66% {
+    transform: translateX(-100%) translateY(0%);
+    opacity: 0;
+    color: tomato;
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+    color: tomato;
   }
 }
 @keyframes mover-user2 {
@@ -417,9 +510,10 @@ body {
   font-weight: 600;
 }
 
-.growAnimation {
+.growAnimation,
+.case-animation {
   animation-name: btn-title-circle;
-  animation-duration: 0.3s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-direction: alternate, reverse, normal;
   animation-timing-function: linear;
@@ -427,9 +521,19 @@ body {
   color: black;
   animation-fill-mode: forwards;
 }
-.growAnimationout {
+.case-arrow-animation {
+  animation-name: arrow-right;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-direction: alternate, reverse, normal;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+.growAnimationout,
+.case-animation-out {
   animation-name: btn-title-circle-back;
-  animation-duration: 0.3s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-direction: alternate, reverse, normal;
   animation-timing-function: linear;
