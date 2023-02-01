@@ -186,14 +186,18 @@ body {
 .users-animation {
   position: absolute;
   top: 300px;
+  width: 300px;
+  height: 600px;
 }
 .user1 {
   border-radius: 50%;
   border: 3px solid white;
   position: absolute;
   left: 80px;
+  animation: mover-user1 0.8s alternate;
 }
 .user2 {
+  animation: mover-user2 0.8s alternate;
   border-radius: 50%;
   border: 3px solid white;
   position: relative;
@@ -290,14 +294,30 @@ body {
     animation-fill-mode: forwards;
   }
 }
-.users-animation {
-  width: 300px;
-  height: 600px;
-  // background-color: red;
-}
+
 @keyframes mover {
   0% {
-    transform: translateY(100px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-user2 {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-user1 {
+  0% {
+    transform: translateX(-50px) translateY(150px);
     opacity: 0;
   }
   100% {
