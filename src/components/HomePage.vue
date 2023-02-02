@@ -135,6 +135,15 @@
             </span>
           </div>
         </div>
+        <div class="founder-container">
+          <div>
+            <img class="founder" src="@/assets/users/founder.jpg" alt="seo" />
+          </div>
+          <div class="about">
+            <span class="founder-name"> GUY HAWKINS </span>
+            <span class="position"> SEO & FOUNDER </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -188,6 +197,28 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.founder-container {
+  padding-top: 230px;
+  padding-left: 100px;
+  animation: mover 0.8s alternate;
+}
+.founder {
+  width: 280px;
+  height: 300px;
+}
+.founder-name {
+  font-weight: 900;
+  padding-top: 8px;
+}
+.position {
+  font-size: 0.75rem;
+  color: #a6a6a6;
+  padding-top: 8px;
+}
 .left-col-bottom-title {
   color: #a6a6a6;
 }
@@ -200,7 +231,7 @@ export default {
 }
 .left-col-bottom {
   position: absolute;
-  top: 800px;
+  top: 840px;
   display: flex;
   align-items: center;
   animation: mover 0.8s alternate;
@@ -543,8 +574,10 @@ export default {
 }
 
 .grow-arrow {
-  width: 20px !important;
+  width: 12px !important;
+  padding-left: 10px;
 }
+
 .arrowAnimation {
   animation-name: arrow-rotate;
   animation-duration: 0.3s;
