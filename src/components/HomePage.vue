@@ -146,6 +146,11 @@
         </div>
       </div>
     </div>
+    <div class="content1" style="width: 100%; height: 800px">
+      <div class="founder-animation">
+        <div class="animation-container"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -206,6 +211,14 @@ export default {
   padding-left: 100px;
   animation: mover 0.8s alternate;
 }
+.founder-animation {
+  width: 360px;
+  margin-top: 1000px;
+}
+.animation-container {
+  height: 800px;
+  background: linear-gradient(180deg, #abb9bc 7.13%, #abb7b7 89.45%);
+}
 .founder {
   width: 280px;
   height: 300px;
@@ -242,6 +255,9 @@ export default {
 .case-studies {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 180px;
+  animation: mover-text 0.8s alternate;
 }
 .case-studies span {
   font-size: 1.25rem;
@@ -440,6 +456,16 @@ export default {
   }
 }
 @keyframes mover-user1 {
+  0% {
+    transform: translateX(-50px) translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-text {
   0% {
     transform: translateX(-50px) translateY(150px);
     opacity: 0;
