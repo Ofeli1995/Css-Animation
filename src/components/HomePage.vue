@@ -1,6 +1,6 @@
 <template>
   <div class="container1">
-    <div class="columns">
+    <div class="section1">
       <div class="left-col">
         <div class="animation-images">
           <div class="images-group">
@@ -146,9 +146,15 @@
         </div>
       </div>
     </div>
-    <div class="content1" style="width: 100%; height: 800px">
-      <div class="founder-animation">
-        <div class="animation-container"></div>
+    <div class="section2" style="width: 100%; height: 100vh">
+      <div
+        class="section2-content"
+        style="display: flex; justify-contnet: space-around"
+      >
+        <div class="founder-animation">
+          <div class="animation-container"></div>
+        </div>
+        <div>fdbgdfgbdf</div>
       </div>
     </div>
   </div>
@@ -213,7 +219,13 @@ export default {
 }
 .founder-animation {
   width: 360px;
-  margin-top: 1000px;
+}
+.section2-content {
+  display: flex;
+  justify-content: space-around;
+}
+.left-col {
+  width: 350px;
 }
 .animation-container {
   height: 800px;
@@ -297,8 +309,8 @@ export default {
 }
 .users-animation {
   position: absolute;
-  top: 300px;
-  width: 300px;
+  top: 600px;
+  width: 350px;
   height: 650px;
   display: flex;
   justify-content: space-between;
@@ -337,14 +349,16 @@ export default {
   top: 120px;
   animation: mover3 1.8s alternate;
 }
-.columns {
+.section1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 140px 20px 20px 20px;
+  margin-inline: auto;
+  width: 80%;
 }
 .central-col {
   padding-top: 60px;
-  padding-right: 40px;
+  // padding-right: 40px;
 }
 .col-gradient {
   width: 300px;
@@ -447,7 +461,7 @@ export default {
 }
 @keyframes mover-user2 {
   0% {
-    transform: translateY(150px);
+    transform: translateY(100px);
     opacity: 0;
   }
   100% {
@@ -457,7 +471,7 @@ export default {
 }
 @keyframes mover-user1 {
   0% {
-    transform: translateX(-50px) translateY(150px);
+    transform: translateX(-50px) translateY(100px);
     opacity: 0;
   }
   100% {
@@ -467,7 +481,7 @@ export default {
 }
 @keyframes mover-text {
   0% {
-    transform: translateX(-50px) translateY(150px);
+    transform: translateX(-50px) translateY(100px);
     opacity: 0;
   }
   100% {
@@ -706,7 +720,7 @@ export default {
   .col-gradient {
     height: 800px;
   }
-  .columns {
+  .section1 {
     padding-top: 0px;
   }
   .dash-gorizont {
@@ -831,4 +845,11 @@ export default {
     font-size: 1.25rem;
   }
 }
+//----------------------- section2
+// .section2 {
+//   width: 100%;
+//   height: 800px;
+//   display: flex;
+//   justify-content: space-around;
+// }
 </style>
