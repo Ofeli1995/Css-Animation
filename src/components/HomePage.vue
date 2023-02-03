@@ -162,7 +162,7 @@
         </div>
         <div class="about-us">
           <div class="about-us-content">
-            ----------------        <span class="databest"> DATABEST</span> - is
+            ----------------     <span class="databest"> DATABEST</span> - is
             unique powerful artificial inteligence. It works with marketing
             data, makes analiyzes, and provides precise results
           </div>
@@ -242,9 +242,6 @@ export default {
   padding-top: 230px;
   padding-left: 100px;
   animation: mover 0.8s alternate;
-}
-.founder-animation {
-  width: 360px;
 }
 .section2-content {
   display: flex;
@@ -887,20 +884,22 @@ export default {
   width: 80%;
 }
 .animation-container {
-  height: 917px;
+  max-height: 850px;
   width: 560px;
+  height: 100%;
   position: relative;
   background: linear-gradient(180deg, #abb9bc 7.13%, #abb7b7 89.45%);
   border-radius: 10px;
+  animation: gradient-height 1s alternate linear;
 }
 .animation-img {
   overflow: hidden;
   position: absolute;
-  top: 1555px;
+  top: 1486px;
   width: 1000px;
 }
 .anim {
-  animation: image-right 3s alternate;
+  animation: image-right 2s alternate;
   width: 560px;
 }
 .history {
@@ -919,15 +918,28 @@ export default {
   font-size: 1.75rem;
   word-break: break-word;
 }
+
+.founder-animation {
+  width: 360px;
+  height: 917px;
+}
 .databest {
   font-size: 2rem;
 }
 @keyframes image-right {
   0% {
-    transform: translateX(-200px);
+    transform: translateX(-300px);
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes gradient-height {
+  0% {
+    height: 620px;
+  }
+  100% {
+    height: 917px;
   }
 }
 </style>
