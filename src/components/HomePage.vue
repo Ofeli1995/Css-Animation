@@ -357,18 +357,24 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  animation: mover2 1.8s alternate;
+  width: 245px;
+  height: 146px;
+  animation: mover2 0.8s alternate;
 }
 .right-img {
+  width: 142px;
+  height: 189px;
   position: absolute;
   right: 0;
   top: 0;
-  animation: mover1 1.8s alternate;
+  animation: mover1 0.8s alternate;
 }
 .bottom-img {
   position: relative;
+  width: 349px;
+  height: 113px;
   top: 120px;
-  animation: mover3 1.8s alternate;
+  animation: mover3 0.8s alternate;
 }
 .section1 {
   display: flex;
@@ -884,22 +890,22 @@ export default {
   width: 80%;
 }
 .animation-container {
-  max-height: 850px;
+  max-height: 917px;
   width: 560px;
   height: 100%;
   position: relative;
   background: linear-gradient(180deg, #abb9bc 7.13%, #abb7b7 89.45%);
   border-radius: 10px;
-  animation: gradient-height 1s alternate linear;
+  animation: gradient-height 0.8s alternate linear;
 }
 .animation-img {
   overflow: hidden;
   position: absolute;
-  top: 1486px;
+  top: 1555px;
   width: 1000px;
 }
 .anim {
-  animation: image-right 2s alternate;
+  animation: image-right 1s alternate;
   width: 560px;
 }
 .history {
@@ -912,7 +918,7 @@ export default {
   padding-right: 40px;
 }
 .about-us {
-  width: 570px;
+  width: 600px;
 }
 .about-us-content {
   font-size: 1.75rem;
@@ -921,7 +927,7 @@ export default {
 
 .founder-animation {
   width: 360px;
-  height: 917px;
+  height: 1000px;
 }
 .databest {
   font-size: 2rem;
@@ -936,7 +942,7 @@ export default {
 }
 @keyframes gradient-height {
   0% {
-    height: 620px;
+    height: 750px;
   }
   100% {
     height: 917px;
