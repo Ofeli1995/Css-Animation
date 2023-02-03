@@ -8,10 +8,12 @@
               src="@/assets/animation-img/Vector.svg"
               alt="img"
               class="left-img"
+              :class="{ showimages: showImages }"
             />
             <img
               src="@/assets/animation-img/Vector1.svg"
               alt="img"
+              :class="{ showimages: showImages }"
               class="right-img"
             />
           </div>
@@ -20,6 +22,7 @@
               src="@/assets/animation-img/Vector2.svg"
               class="bottom-img"
               alt="img"
+              :class="{ showimages: showImages }"
             />
           </div>
           <div class="users-animation">
@@ -195,7 +198,12 @@ export default {
       isHoverGrowNowAfter: false,
       showtextAnimation: false,
       showtextAnimationAfter: false,
+      showImages: false,
     };
+  },
+  mounted() {
+    console.log("this.show", this.showImages);
+    this.showImages = true;
   },
   methods: {
     onMouseMove(e) {
@@ -353,13 +361,17 @@ export default {
   width: 80px;
   height: 80px;
 }
+.showimages {
+  display: block !important;
+}
 .left-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 245px;
   height: 146px;
-  animation: mover2 0.8s alternate;
+  display: none;
+  animation: mover2 1.5s alternate;
 }
 .right-img {
   width: 142px;
@@ -367,14 +379,18 @@ export default {
   position: absolute;
   right: 0;
   top: 0;
-  animation: mover1 0.8s alternate;
+  display: none;
+
+  animation: mover1 1.5s alternate;
 }
 .bottom-img {
   position: relative;
   width: 349px;
   height: 113px;
+  display: none;
+
   top: 120px;
-  animation: mover3 0.8s alternate;
+  animation: mover3 1.5s alternate;
 }
 .section1 {
   display: flex;
