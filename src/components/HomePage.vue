@@ -118,7 +118,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="right-col">
+      <div class="right-col">
         <div
           class="container-orange"
           @mousemove="onMouseMove"
@@ -144,7 +144,7 @@
             <span class="position"> SEO & FOUNDER </span>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
     <div class="section2" style="width: 100%; height: 100vh">
       <div
