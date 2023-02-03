@@ -147,14 +147,40 @@
       </div>
     </div>
     <div class="section2" style="width: 100%; height: 100vh">
-      <div
-        class="section2-content"
-        style="display: flex; justify-contnet: space-around"
-      >
+      <div class="section2-content">
         <div class="founder-animation">
           <div class="animation-container"></div>
+          <div class="animation-img">
+            <div class="anim">
+              <img
+                src="@/assets/users/founderwithtablet.jpg"
+                alt="img"
+                height="800px"
+              />
+            </div>
+          </div>
         </div>
-        <div>fdbgdfgbdf</div>
+        <div class="about-us">
+          <div class="about-us-content">
+            ----------------        <span class="databest"> DATABEST</span> - is
+            unique powerful artificial inteligence. It works with marketing
+            data, makes analiyzes, and provides precise results
+          </div>
+          <div class="history">
+            <div class="history-info">
+              Just a few years ago, marketing and analitics where considered an
+              innovation, and a great optional addition to the agency's toolbox,
+              Now we provide the whole posibilities to take the whole spectrum
+              of data. It's easy to use, cause
+            </div>
+            <div class="history-info">
+              with the Databest you will have the patterns, emotions, and main
+              empathy points users needs. This platform analyzes data and get
+              you a clear vision of own user, It helps get the best out of any
+              ads and people for any product.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -223,14 +249,12 @@ export default {
 .section2-content {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .left-col {
   width: 350px;
 }
-.animation-container {
-  height: 800px;
-  background: linear-gradient(180deg, #abb9bc 7.13%, #abb7b7 89.45%);
-}
+
 .founder {
   width: 280px;
   height: 300px;
@@ -852,4 +876,58 @@ export default {
 //   display: flex;
 //   justify-content: space-around;
 // }
+.section2 {
+  margin-top: 150px;
+}
+.section2-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 20px 20px;
+  margin-inline: auto;
+  width: 80%;
+}
+.animation-container {
+  height: 917px;
+  width: 560px;
+  position: relative;
+  background: linear-gradient(180deg, #abb9bc 7.13%, #abb7b7 89.45%);
+  border-radius: 10px;
+}
+.animation-img {
+  overflow: hidden;
+  position: absolute;
+  top: 1555px;
+  width: 1000px;
+}
+.anim {
+  animation: image-right 3s alternate;
+  width: 560px;
+}
+.history {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 100px;
+}
+.history-info {
+  width: 147px;
+  padding-right: 40px;
+}
+.about-us {
+  width: 570px;
+}
+.about-us-content {
+  font-size: 1.75rem;
+  word-break: break-word;
+}
+.databest {
+  font-size: 2rem;
+}
+@keyframes image-right {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 </style>
