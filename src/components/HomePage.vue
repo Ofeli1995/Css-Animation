@@ -196,11 +196,55 @@
     </div>
     <div class="section3">
       <div class="statistics">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="lines">
+          <div class="ourteam-line-cont">
+            <div class="ourteam-line"></div>
+          </div>
+          <div class="line-cont">
+            <div class="line"></div>
+          </div>
+          <div class="line-cont">
+            <div class="line"></div>
+          </div>
+          <div class="line-cont">
+            <div class="line"></div>
+          </div>
+          <div class="line-cont">
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="values">
+          <div class="ourteam">
+            <div class="images-animation-2">
+              <img src="@/assets/users/3.jpg" alt="img" class="anim-img3" />
+              <img src="@/assets/users/4.jpg" alt="img" class="anim-img4" />
+              <img src="@/assets/users/5.jpg" alt="img" class="anim-img5" />
+            </div>
+          </div>
+          <!-- <div class="vertical-divider"></div> -->
+          <div class="value">
+            <div class="val">44</div>
+            <div class="title-section3">COUNTRIES</div>
+          </div>
+          <!-- <div class="vertical-divider"></div> -->
+
+          <div class="value">
+            <div class="val">32</div>
+            <div class="title-section3">BUSINESS AREAS</div>
+          </div>
+          <!-- <div class="vertical-divider"></div> -->
+
+          <div class="value">
+            <div class="val">500+</div>
+            <div class="title-section3">TBYTE DATA</div>
+          </div>
+          <!-- <div class="vertical-divider"></div> -->
+
+          <div class="value">
+            <div class="val">81+</div>
+            <div class="title-section3">LANGUAGES</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -978,7 +1022,7 @@ export default {
   border-radius: 10px;
 
   transform: rotate(180deg);
-  animation: gradient-height1 0.8s alternate linear;
+  animation: gradient-height1 0.6s alternate linear;
 }
 .right-cont-container {
   width: 230px;
@@ -996,8 +1040,7 @@ export default {
   height: 100%;
   background-color: #dddbd6;
   border-radius: 10px;
-
-  animation: gradient-height2 0.8s alternate linear;
+  animation: gradient-height2 0.6s alternate linear;
 }
 .left-cont-container {
   width: 230px;
@@ -1045,8 +1088,106 @@ export default {
 // secttion3
 .section3 {
   height: 1000px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 20px 20px;
+  margin-inline: auto;
+  width: 80%;
 }
 .statistics {
   display: flex;
+  flex-direction: column;
+  animation: mover 0.8s alternate;
+}
+.lines,
+.values {
+  display: flex;
+}
+.lines {
+  height: 0px;
+}
+.ourteam-line {
+  height: 0px;
+  width: 400px;
+  border-top: 1px dashed black;
+  margin: 0 20px;
+  animation: gradient-width 0.6s alternate linear;
+}
+.line {
+  height: 0px;
+  width: 200px;
+  border-top: 1px dashed black;
+  margin-right: 40px;
+  animation: gradient-width1 0.6s alternate linear;
+}
+.line-cont {
+  width: 200px;
+  height: 0px;
+  margin-right: 40px !important;
+}
+.ourteam-line-cont {
+  width: 400px;
+  height: 0px;
+  margin-right: 60px;
+}
+.anim-img3,
+.anim-img4,
+.anim-img5 {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.ourteam {
+  width: 400px;
+  margin: 0 20px;
+}
+.value {
+  margin: 0 20px;
+  width: 200px;
+  padding-top: 20px;
+}
+.val {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.title-section3 {
+  font-size: 1rem;
+  padding-top: 10px;
+}
+.images-animation-2 {
+  padding-left: 15px;
+  padding-top: 20px;
+  margin-right: 20px;
+}
+.vertical-divider {
+  width: 0px;
+  height: 100px;
+  border-right: 1px dashed black;
+  margin-top: 20px;
+  animation: divider-height 0.6s alternate linear;
+}
+@keyframes gradient-width {
+  0% {
+    width: 200px;
+  }
+  100% {
+    height: 400px;
+  }
+}
+@keyframes gradient-width1 {
+  0% {
+    width: 100px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+@keyframes divider-height {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 100px;
+  }
 }
 </style>
