@@ -164,6 +164,14 @@
           </div>
         </div>
         <div class="about-us">
+          <div class="animation-containers">
+            <div class="left-cont-container">
+              <div class="left-cont"></div>
+            </div>
+            <div class="right-cont-container">
+              <div class="right-cont"></div>
+            </div>
+          </div>
           <div class="about-us-content">
             ----------------     <span class="databest"> DATABEST</span> - is
             unique powerful artificial inteligence. It works with marketing
@@ -184,6 +192,15 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="section3">
+      <div class="statistics">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   </div>
@@ -939,6 +956,7 @@ export default {
 .about-us-content {
   font-size: 1.75rem;
   word-break: break-word;
+  padding-top: 400px;
 }
 
 .founder-animation {
@@ -947,6 +965,49 @@ export default {
 }
 .databest {
   font-size: 2rem;
+}
+.animation-containers {
+  position: relative;
+  display: flex;
+}
+.right-cont {
+  width: 230px;
+  max-height: 450px;
+  height: 100%;
+  background-color: #c2b0a9;
+  border-radius: 10px;
+
+  transform: rotate(180deg);
+  animation: gradient-height1 0.8s alternate linear;
+}
+.right-cont-container {
+  width: 230px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+
+  bottom: -230px;
+  left: 90px;
+}
+.left-cont {
+  width: 230px;
+  max-height: 135px;
+  height: 100%;
+  background-color: #dddbd6;
+  border-radius: 10px;
+
+  animation: gradient-height2 0.8s alternate linear;
+}
+.left-cont-container {
+  width: 230px;
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  bottom: -50px;
+  position: absolute;
+  left: 370px;
+  justify-content: flex-start;
 }
 @keyframes image-right {
   0% {
@@ -963,5 +1024,29 @@ export default {
   100% {
     height: 917px;
   }
+}
+@keyframes gradient-height1 {
+  0% {
+    height: 350px;
+  }
+  100% {
+    height: 450px;
+  }
+}
+@keyframes gradient-height2 {
+  0% {
+    height: 85px;
+  }
+  100% {
+    height: 135px;
+  }
+}
+
+// secttion3
+.section3 {
+  height: 1000px;
+}
+.statistics {
+  display: flex;
 }
 </style>
