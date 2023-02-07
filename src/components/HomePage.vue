@@ -255,6 +255,36 @@
         </div>
       </div>
     </div>
+    <div class="section4">
+      <div class="custom-formula">
+        <span class="custom-formula-text">USE A CUSTOM</span>
+        <span class="custom-formula-text">FORMULA FOR YOUR</span>
+        <span class="custom-formula-text">OWN MARKETING</span>
+        <span class="custom-formula-text">SUCCESS</span>
+      </div>
+      <div class="efficiency">
+        <div class="circles-animation">vvvvvvvvvvvvv</div>
+        <div class="efficiency-content">
+          <div class="efficiency-content-text">
+            ----------------     EFFICIENCY - is a key due to the power of AI,
+            algorithm has a lot of ways to help business to achieve any goals
+            and data results.
+          </div>
+          <div class="efficiency-bottom-text">
+            <div class="history-info">
+              We support our clients and help them define the problems to set up
+              the Databest in a better solution way. The more information you
+              give the greatest result you have.
+            </div>
+            <div class="history-info">
+              Our analyzer technology is so young but doesn't have any
+              competitors. We already have a lot of cases and numbers we are
+              proud of. And some of them are able here.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -1095,9 +1125,9 @@ export default {
 
 // secttion3
 .section3 {
-  height: 1000px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding: 0px 20px 20px 20px;
   margin-inline: auto;
   width: 80%;
@@ -1200,6 +1230,46 @@ export default {
 }
 .anim-img5 {
   animation: mover-user5 0.8s alternate;
+}
+.section4 {
+  margin-inline: auto;
+  width: 80%;
+  // height: 100vh;
+  // background-color: red;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.custom-formula {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+.custom-formula-text {
+  font-size: 7.5rem;
+  font-weight: 900;
+}
+.efficiency {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0;
+  height: 800px;
+  align-items: center;
+}
+.efficiency-content {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.efficiency-content-text {
+  font-size: 1.75rem;
+}
+.efficiency-bottom-text {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 100px;
 }
 @keyframes mover-user3 {
   0% {
