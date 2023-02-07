@@ -149,7 +149,7 @@
         </div>
       </div>
     </div>
-    <div class="section2" style="width: 100%; height: 100vh">
+    <div class="section2" style="width: 100%">
       <div class="section2-content">
         <div class="founder-animation">
           <div class="animation-container"></div>
@@ -221,24 +221,32 @@
               <img src="@/assets/users/5.jpg" alt="img" class="anim-img5" />
             </div>
           </div>
-          <!-- <div class="vertical-divider"></div> -->
+          <div class="divider-container">
+            <div class="vertical-divider"></div>
+          </div>
           <div class="value">
             <div class="val">44</div>
             <div class="title-section3">COUNTRIES</div>
           </div>
-          <!-- <div class="vertical-divider"></div> -->
+          <div class="divider-container">
+            <div class="vertical-divider"></div>
+          </div>
 
           <div class="value">
             <div class="val">32</div>
             <div class="title-section3">BUSINESS AREAS</div>
           </div>
-          <!-- <div class="vertical-divider"></div> -->
+          <div class="divider-container">
+            <div class="vertical-divider"></div>
+          </div>
 
           <div class="value">
             <div class="val">500+</div>
             <div class="title-section3">TBYTE DATA</div>
           </div>
-          <!-- <div class="vertical-divider"></div> -->
+          <div class="divider-container">
+            <div class="vertical-divider"></div>
+          </div>
 
           <div class="value">
             <div class="val">81+</div>
@@ -1098,6 +1106,7 @@ export default {
   display: flex;
   flex-direction: column;
   animation: mover 0.8s alternate;
+  margin: 0 auto;
 }
 .lines,
 .values {
@@ -1154,17 +1163,73 @@ export default {
   font-size: 1rem;
   padding-top: 10px;
 }
-.images-animation-2 {
-  padding-left: 15px;
-  padding-top: 20px;
-  margin-right: 20px;
-}
 .vertical-divider {
   width: 0px;
   height: 100px;
   border-right: 1px dashed black;
   margin-top: 20px;
   animation: divider-height 0.6s alternate linear;
+}
+.divider-container {
+  width: 0px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.images-animation-2 {
+  padding-left: 15px;
+  position: relative;
+  padding-top: 20px;
+  margin-right: 20px;
+}
+.anim-img3,
+.anim-img4,
+.anim-img5 {
+  position: absolute;
+  border: 1px solid white;
+}
+.anim-img3 {
+  left: 145px;
+  animation: mover-user3 0.8s alternate;
+}
+.anim-img4 {
+  left: 80px;
+  animation: mover-user4 0.8s alternate;
+}
+.anim-img5 {
+  animation: mover-user5 0.8s alternate;
+}
+@keyframes mover-user3 {
+  0% {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-user4 {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-user5 {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
 }
 @keyframes gradient-width {
   0% {
