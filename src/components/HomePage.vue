@@ -1309,7 +1309,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 200px;
+  // left: 200px;
   bottom: -230px;
 }
 .small-orange-circle {
@@ -1321,7 +1321,7 @@ export default {
   height: 250px;
   background: linear-gradient(30.12deg, #e8aea0 14.52%, #f06950 53.5%);
   position: absolute;
-  left: 675px;
+  left: 475px;
 }
 .small-orange-circle-content {
   font-size: 1.5rem;
@@ -1336,7 +1336,7 @@ export default {
   align-items: center;
   position: absolute;
   justify-content: center;
-  left: 920px;
+  left: 720px;
   top: 270px;
 }
 .correctness {
@@ -1348,7 +1348,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 450px;
+  left: 250px;
   top: 320px;
 }
 .small-orange-circle-content,
