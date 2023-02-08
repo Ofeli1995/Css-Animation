@@ -1311,6 +1311,7 @@ export default {
   position: absolute;
   // left: 200px;
   bottom: -230px;
+  animation: mover-circle1 1.5s alternate;
 }
 .small-orange-circle {
   border-radius: 50%;
@@ -1338,6 +1339,7 @@ export default {
   justify-content: center;
   left: 720px;
   top: 270px;
+  animation: mover-circle3 1.5s alternate;
 }
 .correctness {
   width: 300px;
@@ -1350,6 +1352,7 @@ export default {
   position: absolute;
   left: 250px;
   top: 320px;
+  animation: mover-circle2 1.5s alternate;
 }
 .small-orange-circle-content,
 .campaign-content,
@@ -1362,6 +1365,39 @@ export default {
 .circles-animation {
   display: flex;
   position: relative;
+}
+@keyframes mover-circle1 {
+  0% {
+    transform: translateY(50px) translateX(350px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-circle2 {
+  0% {
+    transform: translateY(-200px) translateX(150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes mover-circle3 {
+  0% {
+    transform: translateY(-200px) translateX(-150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
 }
 @keyframes mover-user3 {
   0% {
