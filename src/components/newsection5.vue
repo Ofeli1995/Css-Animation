@@ -9,6 +9,7 @@
         This is a complete solution, with marketing strategy, and
         recommendations for budgets, and creatives.
       </div>
+
       <div class="go">
         <div>GO</div>
         <img src="@/assets/arrows/arrow-right.svg" alt="" />

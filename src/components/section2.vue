@@ -58,7 +58,7 @@ export default {
 }
 .section2-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0px 20px 20px 20px;
   margin-inline: auto;

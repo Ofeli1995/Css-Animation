@@ -13,6 +13,6 @@ export default {
 <style>
 .custom-divider {
   width: max-content;
-  padding: 130px 0;
+  padding: 110px 0;
 }
 </style>
