@@ -857,40 +857,4 @@ export default {
     font-size: 1.25rem;
   }
 }
-.history-info {
-  width: 147px;
-  padding-right: 40px;
-}
-@keyframes image-right {
-  0% {
-    transform: translateX(-300px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes gradient-height {
-  0% {
-    height: 750px;
-  }
-  100% {
-    height: 917px;
-  }
-}
-@keyframes gradient-height1 {
-  0% {
-    height: 350px;
-  }
-  100% {
-    height: 450px;
-  }
-}
-@keyframes gradient-height2 {
-  0% {
-    height: 85px;
-  }
-  100% {
-    height: 135px;
-  }
-}
 </style>
