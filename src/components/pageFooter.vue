@@ -157,6 +157,7 @@ export default {
   border-radius: 10px;
   border: 1px solid #aec2c0;
   background: inherit;
+  padding: 0 20px;
 }
 .form-submit {
   height: 50px;
@@ -178,6 +179,7 @@ export default {
 }
 .databest-title {
   font-size: 22px;
+  text-align: center;
 }
 .nav-content {
   display: grid;
@@ -212,5 +214,9 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 16px;
+}
+.newsletter-input:focus-visible,
+.newsletter-input:focus {
+  outline: none;
 }
 </style>

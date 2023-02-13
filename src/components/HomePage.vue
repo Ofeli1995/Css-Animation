@@ -197,25 +197,13 @@ export default {
       orange.style.top = 0 + "px";
     },
     onMouseOver(e) {
-      // if (e.target.className === "case-studies") {
-      //   this.showtextAnimationAfter = false;
-      //   this.showtextAnimation = true;
-      // } else
-      // if (e.target.className === "grow-now-btn") {
       this.showtextAnimation = true;
       this.isHoverGrowNowAfter = false;
       this.isHoverGrowNow = true;
-      // }
     },
     onMouseOut(e) {
-      // if (e.target.className === "case-studies") {
-      //   this.showtextAnimation = false;
-      //   this.showtextAnimationAfter = true;
-      // } else
-      // if (e.target.className === "grow-now-btn") {
       this.isHoverGrowNow = false;
       this.isHoverGrowNowAfter = true;
-      // }
     },
   },
 };

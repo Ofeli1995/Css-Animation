@@ -97,7 +97,7 @@
 <script>
 import HomePage from "@/components/HomePage.vue";
 export default {
-  name: "NavManu",
+  name: "HomeView",
   components: { HomePage },
   data() {
     return {
@@ -162,9 +162,6 @@ export default {
   font-weight: 400;
   cursor: pointer;
   letter-spacing: 1px;
-  height: 60px;
-  display: flex;
-  align-items: center;
 }
 .connect-btn-title {
   font-size: 1.562rem;
@@ -178,6 +175,7 @@ export default {
   align-items: center;
 }
 .nav-title-container {
+  height: 60px;
   display: flex;
   align-items: center;
 }
@@ -191,11 +189,6 @@ export default {
     animation-delay: 0s;
     animation-fill-mode: forwards;
   }
-}
-.connect-btn-title {
-  height: 60px;
-  display: flex;
-  align-items: center;
 }
 .hover-animation {
   animation-name: title-circle;
@@ -266,13 +259,11 @@ export default {
     transform: translateX(0%) translateY(100%);
     opacity: 0;
     color: tomato;
-    font-weight: 700;
   }
   100% {
     transform: translateX(0%) translateY(0%);
     opacity: 1;
     color: tomato;
-    font-weight: 700;
   }
 }
 @keyframes title-circle-after {
